@@ -3,7 +3,7 @@
 ## Integrantes
 - Facundo Martín Morán
 - Santiago Benjamin Avila Puntano
-- Leandro Joél López
+- Leandro Joel López
 - Fabricio Sergio Lazarte
 
 ## Descripción breve
@@ -22,8 +22,8 @@ Fit Tracker es una interfaz web para organizar rutinas de entrenamiento, llevar 
 
 ## ¿Dónde utilizamos Grid?
 - En la sección **Resumen**, las 4 tarjetas de datos (próximo entrenamiento, racha, etc.) usan `display: grid` para pasar de 1 columna en celular a 2 en tablet y 4 en desktop.
-- <!-- Leandro: agregar acá dónde usaron Grid en Ejercicios -->
-- Se utilizó Grid en section `metricas-progreso` para organizar las métricas en columnas y adaptarlas al tamaño de la pantalla.
+- <!-- Leandro: agregar acá dónde usaron Grid en Ejercicios --> - En la sección **Ejercicios** (`lista-ejercicios`), se usa `display: grid` para pasar de 1 columna en celular a 2 en tablet y 3 en desktop.
+- <!-- Fabri: agregar acá dónde usaron Grid en las métricas de Progreso -->
 
 ## ¿Qué variables CSS creamos?
 Definidas en `:root`, dentro de `style.css`:
