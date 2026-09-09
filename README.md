@@ -3,7 +3,7 @@
 ## Integrantes
 - Facundo Martín Morán
 - Santiago Benjamin Avila Puntano
-- Leandro Joél López
+- Leandro Joel López
 - Fabricio Sergio Lazarte
 
 ## Descripción breve
