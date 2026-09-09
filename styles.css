@@ -158,7 +158,35 @@ section h2 {
 
 /* RUTINAS — Benjamin */
 
-
+#Rutinas {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-md);
+}
+.biblioteca-rutinas,
+.gestor-rutinas {
+    background-color: var(--color-negro-suave);
+    border-radius: var(--radio-borde);
+    padding: var(--espaciado-md);
+    flex: 1;
+}
+.biblioteca-rutinas h3,
+.gestor-rutinas h3{
+    color: var(--color-naranja);
+    margin-bottom: var(--espaciado-sm);
+}
+.lista-rutinas,
+.lista-rutinas-propias{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-xs);
+}
+.rutina-item{
+    padding: var(--espaciado-sm);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+}
 
 
 
@@ -201,7 +229,9 @@ section h2 {
  
 /* MEDIA QUERIES BENJAMIN */
 @media (min-width: 1024px) {
-    
+    #rutinas {
+        flex-direction: row;
+    }
 }
 
 

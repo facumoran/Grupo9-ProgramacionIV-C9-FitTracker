@@ -17,7 +17,7 @@ Fit Tracker es una interfaz web para organizar rutinas de entrenamiento, llevar 
 ## ¿Dónde utilizamos Flexbox?
 - En el `header`, para alinear el logo y el menú de navegación.
 - En el menú de navegación (`nav ul`), para distribuir los links en fila y que se acomoden si no entran (`flex-wrap`).
-- <!-- Benja: agregar acá dónde usó Flexbox en Rutinas -->
+- <!-- Benja: agregar acá dónde usó Flexbox en Rutinas --> Usamos Flexbox en la parte de Rutinas para acomodar los elementos uno debajo del otro y dejar un espacio entre ellos. También se usó en las listas para ordenar mejor las rutinas y que se vean más organizadas.
 - <!-- Fabri: agregar acá dónde usó Flexbox en Progreso -->
 
 ## ¿Dónde utilizamos Grid?
