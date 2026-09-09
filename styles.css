@@ -158,7 +158,35 @@ section h2 {
 
 /* RUTINAS — Benjamin */
 
-
+#Rutinas {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-md);
+}
+.biblioteca-rutinas,
+.gestor-rutinas {
+    background-color: var(--color-negro-suave);
+    border-radius: var(--radio-borde);
+    padding: var(--espaciado-md);
+    flex: 1;
+}
+.biblioteca-rutinas h3,
+.gestor-rutinas h3{
+    color: var(--color-naranja);
+    margin-bottom: var(--espaciado-sm);
+}
+.lista-rutinas,
+.lista-rutinas-propias{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-xs);
+}
+.rutina-item{
+    padding: var(--espaciado-sm);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+}
 
 
 
@@ -230,7 +258,44 @@ section h2 {
     border: 1px solid var(--color-borde);
 }
 /* PROGRESO Y FOOTER — Fabricio */
+.grafico-barras{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: var(--espaciado-md);
+    height: 20vh;
+    background-color: var(--color-negro-suave);
+    border-radius: var(--radio-borde);
+    padding: var(--espaciado-md);
+    margin-bottom: var(--espaciado-md);
+}
 
+.barra{
+    flex: 1;
+    background-color: var(--color-naranja);
+    border-radius: 4px 4px 0 0;
+    min-height: 5%;
+    transition: background-color 0.2s ease;
+}
+
+.barra:hover{
+    background-color: var(--color-naranja-oscuro);
+}
+
+.metricas-progreso{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaciado-md);
+}
+
+.footer-principal{
+    text-align: center;
+    padding: var(--espaciado-md);
+    background-color: var(--color-negro-suave);
+    color: var(--color-texto-secundario);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--color-borde);
+}
 
 
 
@@ -262,7 +327,9 @@ section h2 {
  
 /* MEDIA QUERIES BENJAMIN */
 @media (min-width: 1024px) {
-    
+    #rutinas {
+        flex-direction: row;
+    }
 }
 
 
@@ -282,9 +349,13 @@ section h2 {
 
 /* MEDIA QUERIES FABRICIO */
 @media (min-width: 600px) {
-    
+    .metricas-progreso {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
  
 @media (min-width: 1024px) {
-    
+    .metricas-progreso{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
