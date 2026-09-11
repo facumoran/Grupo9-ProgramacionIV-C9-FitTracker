@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap');
+
+:root {
+    --color-negro: #0d0d0d;
+    --color-negro-suave: #1a1a1a;
+    --color-naranja: #ff7a1a;
+    --color-naranja-oscuro: #cc5c00;
+    --color-texto: #f2f2f2;
+    --color-texto-secundario: #9c9c9c;
+    --color-borde: #333333;
+
+    --fuente-titulos: 'Bebas Neue', sans-serif;
+    --fuente-texto: 'Inter', sans-serif;
+ 
+    --espaciado-xs: 0.5rem;
+    --espaciado-sm: 1rem;
+    --espaciado-md: 1.5rem;
+    --espaciado-lg: 2.5rem;
+
+    --radio-borde: 10px;
+    --sombra-tarjeta: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+ 
+body {
+    font-family: var(--fuente-texto);
+    background-color: var(--color-negro);
+    color: var(--color-texto);
+    line-height: 1.5;
+}
+
+.header-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espaciado-sm);
+ 
+    background-color: var(--color-negro-suave);
+    padding: var(--espaciado-md) var(--espaciado-sm);
+    border-bottom: 3px solid var(--color-naranja);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+ .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--espaciado-xs);
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.logo h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 2rem;
+    letter-spacing: 2px;
+    color: var(--color-naranja);
+}
+
+.nav-principal a {
+    color: var(--color-texto);
+    text-decoration: none;
+}
+ 
+.nav-principal ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--espaciado-md);
+    list-style: none;
+}
+
+.logo h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 2rem;
+    letter-spacing: 2px;
+    color: var(--color-naranja);
+}
+ 
+.nav-principal ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--espaciado-md);
+    list-style: none;
+}
+
+.nav-principal a:hover {
+    background-color: var(--color-naranja);
+    color: var(--color-negro);
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--espaciado-lg) var(--espaciado-sm);
+}
+ 
+section {
+    margin-bottom: var(--espaciado-lg);
+    scroll-margin-top: 100px;
+}
+ 
+section h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 2rem;
+    color: var(--color-naranja);
+    margin-bottom: var(--espaciado-md);
+    border-left: 5px solid var(--color-naranja);
+    padding-left: var(--espaciado-sm);
+}
+ 
+
+.tarjeta {
+    background-color: var(--color-negro-suave);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-tarjeta);
+    padding: var(--espaciado-md);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+ 
+.tarjeta:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-naranja);
+}
+ 
+.tarjeta h3 {
+    font-size: 1.1rem;
+    color: var(--color-texto-secundario);
+    margin-bottom: var(--espaciado-xs);
+}
+ 
+.tarjeta .dato {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-naranja);
+}
+
+.tarjetas-resumen {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-md);
+}
+
+/* RUTINAS — Benjamin */
+
+#Rutinas {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-md);
+}
+.biblioteca-rutinas,
+.gestor-rutinas {
+    background-color: var(--color-negro-suave);
+    border-radius: var(--radio-borde);
+    padding: var(--espaciado-md);
+    flex: 1;
+}
+.biblioteca-rutinas h3,
+.gestor-rutinas h3{
+    color: var(--color-naranja);
+    margin-bottom: var(--espaciado-sm);
+}
+.lista-rutinas,
+.lista-rutinas-propias{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-xs);
+}
+.rutina-item{
+    padding: var(--espaciado-sm);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+}
+
+
+
+/* EJERCICIOS Y CALENDARIO — Leandro */
+.lista-ejercicios {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaciado-md);
+}
+
+.ejercicio-item {
+    background-color: var(--color-negro-suave);
+    border-radius: var(--radio-borde);
+    padding: var(--espaciado-md);
+    border-top: 4px solid var(--color-naranja);
+}
+
+.ejercicio-item .nombre-ejercicio {
+    display: block;
+    font-family: var(--fuente-titulos);
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    color: var(--color-naranja);
+}
+
+.ejercicio-item .grupo-muscular,
+.ejercicio-item .equipamiento {
+    display: inline-block;
+    font-size: 1.3rem;
+    color: var(--color-texto-secundario);
+    margin-right: var(--espaciado-sm);
+}
+
+.ejercicio-item .descripcion-ejercicio {
+    margin-top: var(--espaciado-xs);
+    font-size: 0.9rem;
+}
+
+.controles-calendario {
+    margin-bottom: var(--espaciado-xs);
+    font-weight: 600;
+}
+
+.tabla-calendario {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
+}
+
+.tabla-calendario thead,
+.tabla-calendario tbody {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.tabla-calendario th {
+    background-color: var(--color-naranja);
+    color: var(--color-negro);
+    padding: var(--espaciado-xs);
+    font-size: 0.8rem;
+}
+
+.dia-calendario {
+    text-align: center;
+    padding: var(--espaciado-sm) var(--espaciado-xs);
+    border: 1px solid var(--color-borde);
+}
+/* PROGRESO Y FOOTER — Fabricio */
+.grafico-barras{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: var(--espaciado-md);
+    height: 20vh;
+    background-color: var(--color-negro-suave);
+    border-radius: var(--radio-borde);
+    padding: var(--espaciado-md);
+    margin-bottom: var(--espaciado-md);
+}
+
+.barra{
+    flex: 1;
+    background-color: var(--color-naranja);
+    border-radius: 4px 4px 0 0;
+    min-height: 5%;
+    transition: background-color 0.2s ease;
+}
+
+.barra:hover{
+    background-color: var(--color-naranja-oscuro);
+}
+
+.metricas-progreso{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaciado-md);
+}
+
+.footer-principal{
+    text-align: center;
+    padding: var(--espaciado-md);
+    background-color: var(--color-negro-suave);
+    color: var(--color-texto-secundario);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--color-borde);
+}
+
+
+
+
+/* MEDIA QUERIES */
+@media (min-width: 600px) {
+    .header-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+ 
+    .tarjetas-resumen {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--espaciado-md);
+    }
+}
+ 
+@media (min-width: 1024px) {
+    .tarjetas-resumen {
+        grid-template-columns: repeat(4, 1fr);
+    }
+ 
+    section h2 {
+        font-size: 2.5rem;
+    }
+}
+ 
+ 
+/* MEDIA QUERIES BENJAMIN */
+@media (min-width: 1024px) {
+    #rutinas {
+        flex-direction: row;
+    }
+}
+
+
+/* MEDIA QUERIES LEANDRO */
+@media (min-width: 600px) {
+    .lista-ejercicios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+ 
+@media (min-width: 1024px) {
+    .lista-ejercicios {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* MEDIA QUERIES FABRICIO */
+@media (min-width: 600px) {
+    .metricas-progreso {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+ 
+@media (min-width: 1024px) {
+    .metricas-progreso{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
