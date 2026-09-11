@@ -17,13 +17,14 @@ Fit Tracker es una interfaz web para organizar rutinas de entrenamiento, llevar 
 ## ¿Dónde utilizamos Flexbox?
 - En el `header`, para alinear el logo y el menú de navegación.
 - En el menú de navegación (`nav ul`), para distribuir los links en fila y que se acomoden si no entran (`flex-wrap`).
-- <!-- Benja: agregar acá dónde usó Flexbox en Rutinas -->
+- Usamos Flexbox en la parte de Rutinas para acomodar los elementos uno debajo del otro y dejar un espacio entre ellos. También se usó en las listas para ordenar mejor las rutinas y que se vean más organizadas.
 - Se utilizó Flexbox en section `grafico-barras` para organizar las barras horizontalmente y alinearlas en la parte interior del gráfico.
 
 ## ¿Dónde utilizamos Grid?
 - En la sección **Resumen**, las 4 tarjetas de datos (próximo entrenamiento, racha, etc.) usan `display: grid` para pasar de 1 columna en celular a 2 en tablet y 4 en desktop.
-- <!-- Leandro: agregar acá dónde usaron Grid en Ejercicios --> - En la sección **Ejercicios** (`lista-ejercicios`), se usa `display: grid` para pasar de 1 columna en celular a 2 en tablet y 3 en desktop.
-- <!-- Fabri: agregar acá dónde usaron Grid en las métricas de Progreso -->
+- En la sección **Ejercicios** (`lista-ejercicios`), se usa `display: grid` para pasar de 1 columna en celular a 2 en tablet y 3 en desktop.
+- Se utilizó Flexbox en .grafico-barras para organizar las barras horizontalmente y alinearlas en la parte interior del gráfico.
+- Se utilizó Grid en .metricas-progreso para organizar las métricas en columnas y adaptarlas al tamaño de la pantalla.
 
 ## ¿Qué variables CSS creamos?
 Definidas en `:root`, dentro de `style.css`:
