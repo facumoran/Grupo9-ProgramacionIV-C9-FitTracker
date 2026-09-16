@@ -154,9 +154,76 @@ header {
     }
 }
 
-/* ======================= SANTIAGO BENJAMIN ======================== */
-/* Pegar debajo de este comentario el tema de Bootstrap y los estilos de Rutinas. */
 
+/* TEMA DE BOOTSTRAP Y RUTINAS — BENJAMIN */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap');
+
+:root,
+[data-bs-theme="dark"] {
+    --bs-body-bg: #0d0d0d;
+    --bs-body-bg-rgb: 13, 13, 13;
+    --bs-body-color: #f2f2f2;
+
+    --bs-secondary-bg: #1a1a1a;
+    --bs-secondary-bg-rgb: 26, 26, 26;
+
+    --bs-tertiary-bg: #1a1a1a;
+    --bs-tertiary-bg-rgb: 26, 26, 26;
+
+    --bs-border-color: #333333;
+    --bs-card-bg: #1a1a1a;
+    --bs-emphasis-color: #ffffff;
+
+    --bs-primary: #ff7a1a;
+    --bs-primary-rgb: 255, 122, 26;
+
+    --bs-link-color: #ff7a1a;
+    --bs-link-color-rgb: 255, 122, 26;
+
+    --bs-link-hover-color: #cc5c00;
+    --bs-link-hover-color-rgb: 204, 92, 0;
+
+    --bs-progress-bar-bg: #ff7a1a;
+    --bs-body-font-family: 'Inter', sans-serif;
+}
+
+.btn-primary {
+    --bs-btn-color: #0d0d0d;
+    --bs-btn-bg: #ff7a1a;
+    --bs-btn-border-color: #ff7a1a;
+
+    --bs-btn-hover-color: #0d0d0d;
+    --bs-btn-hover-bg: #cc5c00;
+    --bs-btn-hover-border-color: #cc5c00;
+
+    --bs-btn-active-color: #0d0d0d;
+    --bs-btn-active-bg: #cc5c00;
+    --bs-btn-active-border-color: #cc5c00;
+
+    --bs-btn-disabled-bg: #ff7a1a;
+    --bs-btn-disabled-border-color: #ff7a1a;
+
+    --bs-btn-focus-shadow-rgb: 255, 122, 26;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: #ff7a1a;
+    --bs-btn-border-color: #ff7a1a;
+
+    --bs-btn-hover-color: #0d0d0d;
+    --bs-btn-hover-bg: #ff7a1a;
+    --bs-btn-hover-border-color: #ff7a1a;
+
+    --bs-btn-active-color: #0d0d0d;
+    --bs-btn-active-bg: #ff7a1a;
+    --bs-btn-active-border-color: #ff7a1a;
+
+    --bs-btn-disabled-color: #ff7a1a;
+    --bs-btn-disabled-border-color: #ff7a1a;
+
+    --bs-btn-focus-shadow-rgb: 255, 122, 26;
+}
 
 /* ========================== LEANDRO JOEL ========================== */
 /* Pegar debajo de este comentario los estilos de Ejercicios y Calendario. */
