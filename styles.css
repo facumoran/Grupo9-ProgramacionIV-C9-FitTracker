@@ -229,8 +229,9 @@ header {
 /* Pegar debajo de este comentario los estilos de Ejercicios y Calendario. */
 
 
-/* ========================= FABRICIO SERGIO ======================== */
-/* Pegar debajo de este comentario los estilos de Progreso y Footer. */
+.progress {
+    --bs-progress-bar-bg: #ff7a1a;
+}
 
 
 /* ==========================================================================
@@ -536,6 +537,9 @@ PROGRESO Y FOOTER - Fabricio
     border-top: 1px solid var(--color-borde);
 }
 
+.progress{
+
+}
 
 
 
