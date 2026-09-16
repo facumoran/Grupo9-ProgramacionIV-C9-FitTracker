@@ -159,7 +159,70 @@ header {
 
 
 /* ========================== LEANDRO JOEL ========================== */
-/* Pegar debajo de este comentario los estilos de Ejercicios y Calendario. */
+/* EJERCICIOS Y CALENDARIO — LEANDRO */
+
+.imagen-ejercicio {
+    height: 230px;
+    padding: 1rem;
+    object-fit: contain;
+    background-color: #f2f2f2;
+}
+
+.calendario-app {
+    max-width: 760px;
+}
+
+.calendario-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--bs-primary);
+    margin-bottom: 0.5rem;
+}
+
+.calendario-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+.dia-calendario {
+    min-height: 70px;
+    padding: 0.4rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.3rem;
+
+    background-color: var(--bs-tertiary-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.5rem;
+
+    font-size: 0.85rem;
+}
+
+.dia-calendario.con-entreno {
+    border-color: var(--bs-primary);
+}
+
+.badge-dia {
+    font-size: 0.65rem;
+}
+
+@media (max-width: 400px) {
+    .calendario-header,
+    .dia-calendario {
+        font-size: 0.7rem;
+    }
+
+    .dia-calendario {
+        min-height: 54px;
+    }
+}
 
 
 /* ========================= FABRICIO SERGIO ======================== */

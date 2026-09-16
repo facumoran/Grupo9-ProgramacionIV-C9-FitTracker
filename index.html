@@ -150,53 +150,173 @@
 
         </section>
  
-        <section id="Ejercicios">
-        <h2>Ejercicios</h2>
+                <!-- EJERCICIOS -->
+        <section id="ejercicios" class="py-5">
+            <div class="container">
 
-        <ul class="Lista-Ejercicios">
-            <li class="Ejercicio-Item">
-                <span class="Nombre-Ejercicio"></span>
-                <span class="Grupo-Muscular"></span>
-                <span class="Equipamiento"></span>
-                <p class="Descripcion-Ejercicio"></p>
-            </li>
-        </ul>
-    </section>
- 
-        <section id="Calendario">
-        <h2>Calendario</h2>
+                <div class="text-center mb-5">
+                    <h2 class="section-title d-inline-block">Ejercicios</h2>
+                    <p class="lead text-body-secondary mt-2">
+                        Catálogo de ejercicios disponibles.
+                    </p>
+                </div>
 
-        <div class="Controles-Calendario">
-            <span class="Mes-Actual"></span>
-        </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
 
-        <table class="Tabla-Calendario">
-            <thead>
-                <tr>
-                    <th>Lun</th>
-                    <th>Mar</th>
-                    <th>Mié</th>
-                    <th>Jue</th>
-                    <th>Vie</th>
-                    <th>Sab</th>
-                    <th>Dom</th>
-                </tr>
-            </thead>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm card-resaltada">
+                            <img
+                                src="img/ejercicio-sentadilla-v2.png"
+                                class="card-img-top imagen-ejercicio"
+                                alt="Ilustración de una persona realizando una sentadilla con barra"
+                            >
 
-            <tbody>
-                <tr>
-                    <td class="Día-Calendario"></td>
-                    <td class="Día-Calendario"></td>
-                    <td class="Día-Calendario"></td>
-                    <td class="Día-Calendario"></td>
-                    <td class="Día-Calendario"></td>
-                    <td class="Día-Calendario"></td>
-                    <td class="Día-Calendario"></td>
-                </tr>
-            </tbody>
-        </table>
-        
-    </section>
+                            <div class="card-body">
+                                <h3 class="h6 mb-1">Sentadilla</h3>
+                                <span class="badge text-bg-primary me-1">Piernas</span>
+                                <span class="badge text-bg-secondary">Barra</span>
+
+                                <p class="small text-body-secondary mt-2 mb-0">
+                                    Ejercicio básico para tren inferior.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 shadow-sm card-resaltada">
+                            <img
+                                src="img/ejercicio-press-banca-v2.png"
+                                class="card-img-top imagen-ejercicio"
+                                alt="Ilustración de una persona realizando press de banca"
+                            >
+
+                            <div class="card-body">
+                                <h3 class="h6 mb-1">Press de banca</h3>
+                                <span class="badge text-bg-primary me-1">Pecho</span>
+                                <span class="badge text-bg-secondary">Barra</span>
+
+                                <p class="small text-body-secondary mt-2 mb-0">
+                                    Ejercicio compuesto para pecho y tríceps.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 shadow-sm card-resaltada">
+                            <img
+                                src="img/ejercicio-remo-v2.png"
+                                class="card-img-top imagen-ejercicio"
+                                alt="Ilustración de una persona realizando remo con mancuerna"
+                            >
+
+                            <div class="card-body">
+                                <h3 class="h6 mb-1">Remo con mancuerna</h3>
+                                <span class="badge text-bg-primary me-1">Espalda</span>
+                                <span class="badge text-bg-secondary">Mancuerna</span>
+
+                                <p class="small text-body-secondary mt-2 mb-0">
+                                    Trabaja dorsales y núcleo de espalda.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 shadow-sm card-resaltada">
+                            <img
+                                src="img/ejercicio-peso-muerto-v2.png"
+                                class="card-img-top imagen-ejercicio"
+                                alt="Ilustración de una persona realizando peso muerto"
+                            >
+
+                            <div class="card-body">
+                                <h3 class="h6 mb-1">Peso muerto</h3>
+                                <span class="badge text-bg-primary me-1">Espalda</span>
+                                <span class="badge text-bg-secondary">Barra</span>
+
+                                <p class="small text-body-secondary mt-2 mb-0">
+                                    Ejercicio completo de cadena posterior.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CALENDARIO -->
+        <section id="calendario" class="py-5 bg-body-tertiary">
+            <div class="container">
+
+                <div class="text-center mb-4">
+                    <h2 class="section-title d-inline-block">Calendario</h2>
+                    <p class="lead text-body-secondary mt-2">
+                        Tus entrenamientos, día por día.
+                    </p>
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center gap-3 mb-4">
+                    <button
+                        type="button"
+                        class="btn btn-outline-primary btn-sm"
+                        aria-label="Mes anterior"
+                    >
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+
+                    <span class="fw-semibold fs-5">Agosto 2026</span>
+
+                    <button
+                        type="button"
+                        class="btn btn-outline-primary btn-sm"
+                        aria-label="Mes siguiente"
+                    >
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="calendario-app mx-auto">
+
+                    <div class="calendario-header">
+                        <span>Lun</span>
+                        <span>Mar</span>
+                        <span>Mié</span>
+                        <span>Jue</span>
+                        <span>Vie</span>
+                        <span>Sáb</span>
+                        <span>Dom</span>
+                    </div>
+
+                    <div class="calendario-grid">
+                        <div class="dia-calendario"><span>1</span></div>
+                        <div class="dia-calendario"><span>2</span></div>
+
+                        <div class="dia-calendario con-entreno">
+                            <span>3</span>
+                            <span class="badge text-bg-primary badge-dia">
+                                Pierna
+                            </span>
+                        </div>
+
+                        <div class="dia-calendario"><span>4</span></div>
+
+                        <div class="dia-calendario con-entreno">
+                            <span>5</span>
+                            <span class="badge text-bg-primary badge-dia">
+                                Espalda
+                            </span>
+                        </div>
+
+                        <div class="dia-calendario"><span>6</span></div>
+                        <div class="dia-calendario"><span>7</span></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
  
         <section id="progreso">
             <h2>Progreso</h2>
