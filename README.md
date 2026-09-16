@@ -1,60 +1,77 @@
 # Fit Tracker
 
 ## Integrantes
+
 - Facundo Martín Morán
 - Santiago Benjamin Avila Puntano
 - Leandro Joel López
 - Fabricio Sergio Lazarte
 
 ## Descripción breve
-Fit Tracker es una interfaz web para organizar rutinas de entrenamiento, llevar un registro de ejercicios, visualizar un calendario de entrenamientos y hacer seguimiento del progreso físico a lo largo del tiempo.
+
+Fit Tracker es una interfaz web para organizar rutinas de entrenamiento, consultar ejercicios, visualizar un calendario y hacer un seguimiento del progreso físico. Para esta etapa se adaptó la interfaz con Bootstrap, manteniendo la identidad visual en tonos negros y naranjas y el diseño responsive.
 
 ## Tecnologías utilizadas
+
 - HTML5 semántico
-- CSS (Variables, Flexbox, Grid, Media Queries)
+- CSS3
+- Bootstrap 5.3
+- Bootstrap Icons
 - Git y GitHub para el control de versiones
 
+Bootstrap y Bootstrap Icons se incorporaron mediante CDN. También se agregó Bootstrap Bundle para el funcionamiento del menú desplegable en dispositivos móviles.
+
 ## ¿Dónde utilizamos Flexbox?
-- En el `header`, para alinear el logo y el menú de navegación.
-- En el menú de navegación (`nav ul`), para distribuir los links en fila y que se acomoden si no entran (`flex-wrap`).
-- Usamos Flexbox en la parte de Rutinas para acomodar los elementos uno debajo del otro y dejar un espacio entre ellos. También se usó en las listas para ordenar mejor las rutinas y que se vean más organizadas.
-- Se utilizó Flexbox en section `grafico-barras` para organizar las barras horizontalmente y alinearlas en la parte interior del gráfico.
+
+- En la barra de navegación, para alinear el nombre de Fit Tracker, la mascota y los enlaces.
+- En la presentación principal, para centrar y distribuir el texto y la imagen.
+- En las listas de rutinas, para separar el nombre de cada rutina de su botón.
+- En los controles del calendario, para alinear los botones con el nombre del mes.
+- Se utilizaron clases de Bootstrap como `d-flex`, `align-items-center`, `justify-content-between` y `gap`.
 
 ## ¿Dónde utilizamos Grid?
-- En la sección **Resumen**, las 4 tarjetas de datos (próximo entrenamiento, racha, etc.) usan `display: grid` para pasar de 1 columna en celular a 2 en tablet y 4 en desktop.
-- En la sección **Ejercicios** (`lista-ejercicios`), se usa `display: grid` para pasar de 1 columna en celular a 2 en tablet y 3 en desktop.
-- Se utilizó Flexbox en .grafico-barras para organizar las barras horizontalmente y alinearlas en la parte interior del gráfico.
-- Se utilizó Grid en .metricas-progreso para organizar las métricas en columnas y adaptarlas al tamaño de la pantalla.
+
+- Se utilizó el sistema de grilla de Bootstrap mediante `container`, `row` y `col`.
+- Las tarjetas del resumen se distribuyen en una, dos o cuatro columnas según el tamaño de pantalla.
+- Los ejercicios se organizan en una, dos o cuatro columnas.
+- Las métricas de progreso se muestran en una o tres columnas.
+- El calendario utiliza CSS Grid para generar siete columnas del mismo tamaño.
 
 ## ¿Qué variables CSS creamos?
-Definidas en `:root`, dentro de `style.css`:
-- Colores: `--color-negro`, `--color-negro-suave`, `--color-naranja`, `--color-naranja-oscuro`, `--color-texto`, `--color-texto-secundario`, `--color-borde`
-- Tipografía: `--fuente-titulos`, `--fuente-texto`
-- Espaciados: `--espaciado-xs`, `--espaciado-sm`, `--espaciado-md`, `--espaciado-lg`
-- Bordes y sombras: `--radio-borde`, `--sombra-tarjeta`
 
-Esto permite cambiar el esquema de colores o los espaciados de todo el sitio modificando un solo lugar.
+Se personalizaron variables de Bootstrap dentro de `:root` y `[data-bs-theme="dark"]` para mantener la estética de Fit Tracker:
+
+- Fondo principal: `--bs-body-bg`
+- Fondo secundario: `--bs-secondary-bg` y `--bs-tertiary-bg`
+- Color principal naranja: `--bs-primary` y `--bs-primary-rgb`
+- Colores de enlaces: `--bs-link-color` y `--bs-link-hover-color`
+- Color de bordes: `--bs-border-color`
+- Tipografía principal: `--bs-body-font-family`
+
+También se personalizaron las variables de los botones de Bootstrap para que sus estados normal, hover y active utilicen la paleta naranja y negra.
 
 ## ¿Cómo implementamos el Responsive Design?
-Usamos un enfoque **mobile-first**: los estilos base (sin media query) están pensados para celular, con los elementos apilados en columna. Después, con `@media (min-width: 600px)` adaptamos el diseño para tablet, y con `@media (min-width: 1024px)` lo adaptamos para pantallas de escritorio.
 
-Cada integrante escribió las media queries correspondientes a su propia sección, agrupadas al final del `style.css`.
+Se utilizó el enfoque mobile-first de Bootstrap. Las clases `row-cols`, `col-sm`, `col-lg` y `navbar-expand-lg` permiten que las tarjetas, las secciones y la navegación se adapten automáticamente al ancho de la pantalla. También se agregó una media query para ajustar la mascota y el calendario en celulares muy angostos.
 
 ## Estrategias de SEO implementadas
-1. **Meta description**: se agregó una descripción clara del sitio en `<meta name="description">`, que es lo que suele mostrarse en los resultados de búsqueda de Google.
-2. **HTML semántico**: se usaron etiquetas como `header`, `nav`, `main`, `section`, `article` y `footer` en vez de `div` genéricos, lo que ayuda a los buscadores a entender la estructura y jerarquía del contenido.
-3. **Jerarquía de encabezados correcta**: un solo `<h1>` (el nombre del sitio), `<h2>` para cada sección principal y `<h3>` para los subtítulos dentro de cada una, sin saltar niveles.
-4. **Atributo `alt` en imágenes**: la imagen del logo tiene un texto alternativo descriptivo (`alt="Logo de Fit Tracker, dos mancuernas cruzadas"`), útil tanto para SEO como para accesibilidad.
-5. **Atributo `lang="es"`**: declarado en la etiqueta `<html>`, para que los buscadores identifiquen correctamente el idioma del contenido.
-6. **Etiquetas Open Graph** (`og:title`, `og:description`, `og:type`): mejoran cómo se muestra el sitio al compartirlo en redes sociales.
+
+1. **Meta description**: se agregó una descripción clara del sitio para los resultados de búsqueda.
+2. **HTML semántico**: se utilizaron etiquetas como `header`, `nav`, `main`, `section` y `footer`.
+3. **Jerarquía de encabezados**: se mantuvo un único `<h1>` y se utilizaron `<h2>` y `<h3>` para ordenar el contenido.
+4. **Atributos `alt`**: las imágenes importantes cuentan con textos alternativos descriptivos.
+5. **Atributo `lang="es"`**: permite identificar correctamente el idioma del sitio.
+6. **Etiquetas Open Graph**: mejoran la presentación de la página al compartirla en redes sociales.
 
 ## Estructura del proyecto
-```
-mi-proyecto/
+
+```text
+Grupo9-ProgramacionIV-C9-FitTracker/
 ├── img/
-│   └── logo.svg
-├── style.css
+│   ├── logo.svg
+│   ├── mascota-fit-tracker.png
+│   └── mascota-navbar-reclinada.png
 ├── index.html
+├── styles.css
 └── README.md
 ```
-

@@ -1,3 +1,175 @@
+/* ==========================================================================
+   CSS ACTIVO TP3 - BOOTSTRAP
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap');
+
+/* ======================== FACUNDO MARTIN MORAN ======================== */
+/* Estructura general, paleta, navbar, presentacion y resumen. */
+
+:root,
+[data-bs-theme="dark"] {
+    --bs-primary: #ff7a1a;
+    --bs-primary-rgb: 255, 122, 26;
+    --bs-link-color: #ff9a52;
+    --bs-link-color-rgb: 255, 154, 82;
+    --bs-link-hover-color: #ffb47d;
+    --bs-link-hover-color-rgb: 255, 180, 125;
+}
+
+h1,
+h2,
+h3,
+.navbar-brand span {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 76px;
+}
+
+.section-title {
+    border-left: 5px solid var(--bs-primary);
+    padding-left: 1rem;
+    font-size: 2rem;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.navbar {
+    border-bottom: 3px solid var(--bs-primary);
+    background-color: #1a1a1a;
+}
+
+.navbar-brand {
+    color: var(--bs-primary);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.75rem;
+    letter-spacing: 2px;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+    color: #ffffff;
+}
+
+.navbar-mascota {
+    width: 82px;
+    height: 44px;
+    object-fit: contain;
+}
+
+.navbar-nav .nav-link {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link.active {
+    color: var(--bs-primary);
+}
+
+.hero-fit {
+    position: relative;
+    overflow: hidden;
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(circle at 82% 48%, rgba(255, 122, 26, 0.15), transparent 28%),
+        linear-gradient(135deg, #0d0d0d 0%, #171717 100%);
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+.hero-etiqueta {
+    color: var(--bs-primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+}
+
+.hero-titulo {
+    max-width: 650px;
+    font-size: clamp(2.7rem, 6vw, 4.5rem);
+    line-height: 0.98;
+}
+
+.hero-titulo span {
+    color: var(--bs-primary);
+}
+
+.hero-descripcion {
+    max-width: 580px;
+}
+
+.hero-mascota-contenedor {
+    width: min(100%, 390px);
+}
+
+.hero-mascota {
+    display: block;
+    width: 100%;
+    max-height: 410px;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 28px rgba(0, 0, 0, 0.45));
+}
+
+.card-resaltada {
+    border: 1px solid rgba(255, 122, 26, 0.4);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-resaltada:hover {
+    transform: translateY(-4px);
+    border-color: var(--bs-primary);
+}
+
+@media (max-width: 400px) {
+    .navbar-mascota {
+        width: 64px;
+        height: 36px;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .hero-fit {
+        min-height: auto;
+    }
+
+    .hero-mascota-contenedor {
+        width: min(100%, 245px);
+    }
+}
+
+/* ======================= SANTIAGO BENJAMIN ======================== */
+/* Pegar debajo de este comentario el tema de Bootstrap y los estilos de Rutinas. */
+
+
+/* ========================== LEANDRO JOEL ========================== */
+/* Pegar debajo de este comentario los estilos de Ejercicios y Calendario. */
+
+
+/* ========================= FABRICIO SERGIO ======================== */
+/* Pegar debajo de este comentario los estilos de Progreso y Footer. */
+
+
+/* ==========================================================================
+   CSS ORIGINAL DEL TP2 - CONSERVADO COMO REFERENCIA, YA NO SE EJECUTA
+   ==========================================================================
+
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap');
 
 :root {
@@ -156,7 +328,7 @@ section h2 {
     gap: var(--espaciado-md);
 }
 
-/* RUTINAS — Benjamin */
+RUTINAS - Benjamin
 
 #Rutinas {
     display: flex;
@@ -190,7 +362,7 @@ section h2 {
 
 
 
-/* EJERCICIOS Y CALENDARIO — Leandro */
+EJERCICIOS Y CALENDARIO - Leandro
 .lista-ejercicios {
     list-style: none;
     display: grid;
@@ -257,7 +429,7 @@ section h2 {
     padding: var(--espaciado-sm) var(--espaciado-xs);
     border: 1px solid var(--color-borde);
 }
-/* PROGRESO Y FOOTER — Fabricio */
+PROGRESO Y FOOTER - Fabricio
 .grafico-barras{
     display: flex;
     align-items: flex-end;
@@ -300,7 +472,7 @@ section h2 {
 
 
 
-/* MEDIA QUERIES */
+MEDIA QUERIES
 @media (min-width: 600px) {
     .header-principal {
         flex-direction: row;
@@ -325,7 +497,7 @@ section h2 {
 }
  
  
-/* MEDIA QUERIES BENJAMIN */
+MEDIA QUERIES BENJAMIN
 @media (min-width: 1024px) {
     #rutinas {
         flex-direction: row;
@@ -333,7 +505,7 @@ section h2 {
 }
 
 
-/* MEDIA QUERIES LEANDRO */
+MEDIA QUERIES LEANDRO
 @media (min-width: 600px) {
     .lista-ejercicios {
         grid-template-columns: repeat(2, 1fr);
@@ -347,7 +519,7 @@ section h2 {
 }
 
 
-/* MEDIA QUERIES FABRICIO */
+MEDIA QUERIES FABRICIO
 @media (min-width: 600px) {
     .metricas-progreso {
         grid-template-columns: repeat(2, 1fr);
@@ -359,3 +531,5 @@ section h2 {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+*/
