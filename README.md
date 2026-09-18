@@ -9,7 +9,11 @@
 
 ## Descripción breve
 
-Fit Tracker es una interfaz web para organizar rutinas de entrenamiento, consultar ejercicios, visualizar un calendario y hacer un seguimiento del progreso físico. Para esta etapa se adaptó la interfaz con Bootstrap, manteniendo la identidad visual en tonos negros y naranjas y el diseño responsive.
+Fit Tracker es una aplicación web para organizar rutinas de entrenamiento, consultar ejercicios, planificar sesiones en un calendario y seguir el progreso. Utiliza Bootstrap y JavaScript con manipulación del DOM y eventos, manteniendo la identidad visual negra y naranja y el diseño responsive.
+
+El catálogo reúne 48 ejercicios (6 por grupo muscular), con búsqueda, filtros, favoritos y detalles. Se pueden crear, editar, duplicar y eliminar rutinas, personalizar series, repeticiones, cargas y descansos, y programarlas en el calendario. Al entrenar se registran las series realizadas; el resumen, las métricas, los récords y el historial se actualizan con esos datos. El temporizador permite iniciar, pausar y reiniciar descansos. Las plantillas son ejemplos editables, no planes profesionales personalizados.
+
+El perfil es local y no constituye un login seguro. Las rutinas, la planificación y las sesiones, incluso la sesión en curso, se guardan con `localStorage` solo en el navegador actual; no hay contraseñas, sincronización ni base de datos en esta etapa. Desde Perfil se puede descargar una copia JSON. Si el navegador bloquea el guardado, la aplicación lo informa. Los 42 ejercicios de pecho, espalda, piernas, glúteos, hombros, bíceps y tríceps cuentan con ilustraciones de la mascota; los 6 ejercicios de abdomen muestran un marcador de ilustración pendiente. La estructura del catálogo admite nuevas entradas, imágenes y enlaces de video en el futuro.
 
 ## Tecnologías utilizadas
 
@@ -17,9 +21,14 @@ Fit Tracker es una interfaz web para organizar rutinas de entrenamiento, consult
 - CSS3
 - Bootstrap 5.3
 - Bootstrap Icons
+- JavaScript y DOM, eventos y localStorage
 - Git y GitHub para el control de versiones
 
-Bootstrap y Bootstrap Icons se incorporaron mediante CDN. También se agregó Bootstrap Bundle para el funcionamiento del menú desplegable en dispositivos móviles.
+Bootstrap y Bootstrap Icons se incorporaron mediante CDN. Las clases de Bootstrap resuelven la distribución, alineación, espaciados y botones redondeados; el CSS propio conserva la identidad visual y los componentes específicos. También se agregó Bootstrap Bundle para el funcionamiento del menú desplegable en dispositivos móviles.
+
+Para usar la app, abrir `index.html` en un navegador actualizado con JavaScript habilitado; se necesita internet para cargar Bootstrap, los iconos y las fuentes. Personalizar una plantilla o crear una rutina, programarla y registrar una sesión. Solo las series marcadas como realizadas cuentan en el progreso; el volumen es la suma de carga × repeticiones, sin incluir ejercicios por tiempo ni estimar peso corporal. La racha cuenta semanas consecutivas con al menos una sesión, incluida la semana anterior si la actual todavía no tiene actividad.
+
+Con Node.js instalado, `node --test tests/datos.test.cjs` verifica el catálogo, el guardado, las validaciones y los cálculos de progreso.
 
 ## ¿Dónde utilizamos Flexbox?
 
@@ -73,5 +82,14 @@ Grupo9-ProgramacionIV-C9-FitTracker/
 │   └── mascota-navbar-reclinada.png
 ├── index.html
 ├── styles.css
+├── js/
+│   ├── catalogo.js
+│   ├── datos.js
+│   ├── app.js
+│   ├── ejercicios.js
+│   ├── rutinas.js
+│   └── entrenamiento.js
+├── tests/
+│   └── datos.test.cjs
 └── README.md
 ```
