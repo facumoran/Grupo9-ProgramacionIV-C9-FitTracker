@@ -1,21 +1,6 @@
-/* ==========================================================================
-   CSS ACTIVO TP3 - BOOTSTRAP
-   ========================================================================== */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap');
-
-/* ======================== FACUNDO MARTIN MORAN ======================== */
-/* Estructura general, paleta, navbar, presentacion y resumen. */
-
-:root,
-[data-bs-theme="dark"] {
-    --bs-primary: #ff7a1a;
-    --bs-primary-rgb: 255, 122, 26;
-    --bs-link-color: #ff9a52;
-    --bs-link-color-rgb: 255, 154, 82;
-    --bs-link-hover-color: #ffb47d;
-    --bs-link-hover-color-rgb: 255, 180, 125;
-}
 
 h1,
 h2,
@@ -39,12 +24,6 @@ section {
     font-size: 2rem;
 }
 
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1030;
-}
-
 .navbar {
     border-bottom: 3px solid var(--bs-primary);
     background-color: #1a1a1a;
@@ -65,12 +44,9 @@ header {
 .navbar-mascota {
     width: 82px;
     height: 44px;
-    object-fit: contain;
 }
 
 .navbar-nav .nav-link {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
     font-size: 1.05rem;
 }
 
@@ -81,15 +57,10 @@ header {
 }
 
 .hero-fit {
-    position: relative;
-    overflow: hidden;
     min-height: 470px;
-    display: flex;
-    align-items: center;
     background:
         radial-gradient(circle at 82% 48%, rgba(255, 122, 26, 0.15), transparent 28%),
         linear-gradient(135deg, #0d0d0d 0%, #171717 100%);
-    border-bottom: 1px solid var(--bs-border-color);
 }
 
 .hero-etiqueta {
@@ -118,10 +89,7 @@ header {
 }
 
 .hero-mascota {
-    display: block;
-    width: 100%;
     max-height: 410px;
-    object-fit: contain;
     filter: drop-shadow(0 20px 28px rgba(0, 0, 0, 0.45));
 }
 
@@ -153,11 +121,6 @@ header {
         width: min(100%, 245px);
     }
 }
-
-
-/* TEMA DE BOOTSTRAP Y RUTINAS — BENJAMIN */
-
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap');
 
 :root,
 [data-bs-theme="dark"] {
@@ -225,13 +188,8 @@ header {
     --bs-btn-focus-shadow-rgb: 255, 122, 26;
 }
 
-/* ========================== LEANDRO JOEL ========================== */
-/* EJERCICIOS Y CALENDARIO — LEANDRO */
-
 .imagen-ejercicio {
     height: 230px;
-    padding: 1rem;
-    object-fit: contain;
     background-color: #f2f2f2;
 }
 
@@ -242,11 +200,7 @@ header {
 .calendario-header {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    text-align: center;
-    font-weight: 600;
     font-size: 0.85rem;
-    color: var(--bs-primary);
-    margin-bottom: 0.5rem;
 }
 
 .calendario-grid {
@@ -259,10 +213,6 @@ header {
     min-height: 70px;
     padding: 0.4rem;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
     gap: 0.3rem;
 
     background-color: var(--bs-tertiary-bg);
@@ -291,11 +241,168 @@ header {
     }
 }
 
-
-.progress {
-    --bs-progress-bar-bg: #ff7a1a;
+dialog {
+    width: min(760px, calc(100% - 24px));
+    max-height: 88dvh;
+    border: 1px solid #ff7a1a;
+    border-radius: 18px;
+    background: #1a1a1a;
+    color: #f2f2f2;
 }
 
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+body:has(dialog[open]) {
+    overflow: hidden;
+}
+
+.item-app {
+    padding: 0.8rem 0;
+}
+
+.rutina-app,
+.editor-item {
+    border: 1px solid #444;
+    border-radius: 12px;
+    min-width: 0;
+}
+
+.estado-vacio {
+    color: #b5b5b5;
+}
+
+.favorito {
+    border: 0;
+    color: #ff9a52;
+    background: transparent;
+    font-size: 1.7rem;
+    line-height: 1;
+    padding: 0.2rem;
+}
+
+.ejercicio-sin-imagen {
+    gap: 0.7rem;
+    min-height: 230px;
+    background: radial-gradient(circle, #3c291e, #161616);
+    color: #b5b5b5;
+}
+
+.grupo-ilustracion {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: #ff9a52;
+}
+
+.detalle-imagen {
+    max-height: 300px;
+    background: #f2f2f2;
+    border-radius: 12px;
+}
+
+.aviso-app {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: calc(100% - 24px);
+    background: #28221d;
+    color: #fff;
+    border: 1px solid #ff7a1a;
+    border-radius: 12px;
+    box-shadow: 0 6px 28px #0008;
+    padding: 1rem;
+    z-index: 1100;
+}
+
+.aviso-app[hidden] {
+    display: none;
+}
+
+.aviso-error {
+    border-color: #ef8282;
+}
+
+button.dia-calendario {
+    color: #f2f2f2;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+button.dia-calendario:hover {
+    background: #34251a;
+}
+
+.dia-seleccionado {
+    outline: 2px solid #f2f2f2;
+    outline-offset: 1px;
+}
+
+.dia-hoy > span:first-child {
+    color: #ff9a52;
+    font-weight: 700;
+}
+
+.dia-completado {
+    border-color: #68bb91;
+}
+
+.sesion-activa {
+    border: 1px solid #ff7a1a;
+    scroll-margin-top: 85px;
+}
+
+.tabla-series {
+    min-width: 310px;
+}
+
+.tabla-series .form-control {
+    max-width: 130px;
+}
+
+.temporizador-app {
+    --bs-border-color: #444;
+}
+
+.temporizador-app input {
+    width: 110px;
+}
+
+#reloj {
+    font-size: 3rem;
+    font-variant-numeric: tabular-nums;
+    color: #ff9a52;
+}
+
+:focus-visible {
+    outline: 3px solid #ff9a52;
+    outline-offset: 3px;
+}
+
+@media (max-width: 575px) {
+
+    #nombre-mes {
+        font-size: 1rem;
+        letter-spacing: 0;
+    }
+
+    .calendario-grid {
+        gap: 4px;
+    }
+
+    .badge-dia {
+        font-size: 0.55rem;
+        padding: 3px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .card-resaltada { transition: none; }
+    .card-resaltada:hover { transform: none; }
+}
 
 /* ==========================================================================
    CSS ORIGINAL DEL TP2 - CONSERVADO COMO REFERENCIA, YA NO SE EJECUTA
