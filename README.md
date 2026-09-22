@@ -72,6 +72,10 @@ Se utilizó el enfoque mobile-first de Bootstrap. Las clases `row-cols`, `col-sm
 5. **Atributo `lang="es"`**: permite identificar correctamente el idioma del sitio.
 6. **Etiquetas Open Graph**: mejoran la presentación de la página al compartirla en redes sociales.
 
+## URL del deploy
+
+https://fittrackerc9.netlify.app
+
 ## Estructura del proyecto
 
 ```text

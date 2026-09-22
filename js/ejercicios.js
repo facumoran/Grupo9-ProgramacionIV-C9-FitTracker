@@ -25,9 +25,9 @@
         desplegar.hidden = encontrados.length <= limiteCatalogo;
         desplegar.setAttribute('aria-expanded', String(catalogoExpandido));
         desplegar.textContent = catalogoExpandido ? 'Ver menos ↑' : `Ver todos (${encontrados.length}) ↓`;
-        $('#catalogo').innerHTML = visibles.length ? visibles.map(e => `<div class="col"><article class="card h-100 card-resaltada">
-            ${e.imagen ? `<img src="${e.imagen}" class="card-img-top imagen-ejercicio p-3 object-fit-contain" alt="Ilustración de ${esc(e.nombre)}" loading="lazy" width="320" height="230">` : `<div class="ejercicio-sin-imagen d-flex flex-column justify-content-center align-items-center" aria-hidden="true"><span class="grupo-ilustracion">${esc(e.grupo)}</span><span class="small">Ilustración pendiente</span></div>`}
-            <div class="card-body d-flex flex-column"><div class="d-flex justify-content-between gap-2"><h3 class="h5">${esc(e.nombre)}</h3><button type="button" class="favorito" data-action="favorito" data-id="${e.id}" aria-label="Favorito: ${esc(e.nombre)}" aria-pressed="${datos.favoritos.includes(e.id)}">${datos.favoritos.includes(e.id) ? '★' : '☆'}</button></div>
+        $('#catalogo').innerHTML = visibles.length ? visibles.map(e => `<div class="col"><article class="card h-100 card-resaltada border border-primary border-opacity-50">
+            ${e.imagen ? `<img src="${e.imagen}" class="card-img-top imagen-ejercicio p-3 object-fit-contain bg-light" alt="Ilustración de ${esc(e.nombre)}" loading="lazy" width="320" height="230">` : `<div class="ejercicio-sin-imagen d-flex flex-column justify-content-center align-items-center gap-3 bg-body-tertiary text-body-secondary" aria-hidden="true"><span class="grupo-ilustracion display-6 text-primary">${esc(e.grupo)}</span><span class="small">Ilustración pendiente</span></div>`}
+            <div class="card-body d-flex flex-column"><div class="d-flex justify-content-between gap-2"><h3 class="h5">${esc(e.nombre)}</h3><button type="button" class="favorito btn btn-link text-primary text-decoration-none border-0 fs-3 lh-1 p-1" data-action="favorito" data-id="${e.id}" aria-label="Favorito: ${esc(e.nombre)}" aria-pressed="${datos.favoritos.includes(e.id)}">${datos.favoritos.includes(e.id) ? '★' : '☆'}</button></div>
             <p><span class="badge text-bg-primary">${esc(e.grupo)}</span> <span class="badge text-bg-secondary">${esc(e.equipo)}</span></p><p class="small text-body-secondary">${esc(e.descripcion)}</p><div class="d-flex flex-wrap gap-2 mt-auto">${boton('Ver detalle', 'detalle', e.id)}${boton('+ A rutina', 'agregar-catalogo', e.id, 'btn-primary')}</div></div></article></div>`).join('') : `<div class="col-12">${vacio('No hay resultados. Probá otro nombre o cambiá los filtros.')}</div>`;
     }
 
@@ -58,7 +58,7 @@
             }
             case 'detalle': {
                 const e = C.ejercicios.find(x => x.id === id);
-                abrirDialogo(e.nombre, `${e.imagen ? `<img class="detalle-imagen d-block w-100 object-fit-contain mb-3" src="${e.imagen}" alt="Ilustración de ${esc(e.nombre)}">` : ''}<p><strong>${esc(e.grupo)}</strong> · ${esc(e.equipo)}</p><p>${esc(e.descripcion)}</p><h3 class="h5">Referencia de ejecución</h3><p>${esc(e.tecnica)}</p><p class="small text-body-secondary">Usá una carga que puedas controlar. Esta descripción no reemplaza la orientación de un profesional. Los videos se incorporarán en una próxima etapa.</p>${boton('Agregar a una rutina', 'agregar-catalogo', id, 'btn-primary')}`);
+                abrirDialogo(e.nombre, `${e.imagen ? `<img class="detalle-imagen d-block w-100 object-fit-contain mb-3 bg-light rounded-3" src="${e.imagen}" alt="Ilustración de ${esc(e.nombre)}">` : ''}<p><strong>${esc(e.grupo)}</strong> · ${esc(e.equipo)}</p><p>${esc(e.descripcion)}</p><h3 class="h5">Referencia de ejecución</h3><p>${esc(e.tecnica)}</p><p class="small text-body-secondary">Usá una carga que puedas controlar. Esta descripción no reemplaza la orientación de un profesional. Los videos se incorporarán en una próxima etapa.</p>${boton('Agregar a una rutina', 'agregar-catalogo', id, 'btn-primary')}`);
                 break;
             }
         }

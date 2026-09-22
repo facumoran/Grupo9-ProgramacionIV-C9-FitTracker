@@ -11,8 +11,8 @@
     let datos = inicial.datos;
     let bloquearGuardado = Boolean(inicial.error);
     const boton = (texto, accion, id = '', clase = 'btn-outline-primary') => `<button type="button" class="btn ${clase} btn-sm rounded-pill" data-action="${accion}" data-id="${esc(id)}">${texto}</button>`;
-    const vacio = texto => `<p class="estado-vacio py-3 mb-0">${texto}</p>`;
-    const titulo = (nombre, descripcion) => `<div class="text-center mb-4"><h2 class="section-title d-inline-block">${nombre}</h2><p class="lead text-body-secondary mt-2">${descripcion}</p></div>`;
+    const vacio = texto => `<p class="estado-vacio text-body-secondary py-3 mb-0">${texto}</p>`;
+    const titulo = (nombre, descripcion) => `<div class="text-center mb-4"><h2 class="section-title d-inline-block border-start border-5 border-primary ps-3 fs-2">${nombre}</h2><p class="lead text-body-secondary mt-2">${descripcion}</p></div>`;
     function avisar(texto, error = false) {
         const aviso = $('#aviso');
         aviso.textContent = texto;
@@ -72,8 +72,8 @@
     const A = window.FitApp = { D, C, $, esc, formato, fechaLarga, datos, boton, vacio, titulo, avisar, guardar, actualizar, abrirDialogo, cerrarDialogo, rutinaPorId, completada, registrar };
 
     document.body.insertAdjacentHTML('beforeend', `
-        <div id="aviso" role="status" class="aviso-app" hidden></div>
-        <dialog class="p-3 p-sm-4" id="dialogo" aria-labelledby="dialogo-titulo">
+        <div id="aviso" role="status" class="aviso-app position-fixed bottom-0 start-50 translate-middle-x border border-primary rounded-3 shadow p-3 mb-3 text-white" hidden></div>
+        <dialog class="p-3 p-sm-4 border border-primary rounded-4 bg-body-tertiary text-body" id="dialogo" aria-labelledby="dialogo-titulo">
             <div class="d-flex align-items-center justify-content-between gap-3 mb-4"><h2 id="dialogo-titulo" class="h3 mb-0"></h2><button type="button" class="btn btn-outline-primary btn-sm rounded-pill" data-action="cerrar" aria-label="Cerrar ventana">Cerrar ✕</button></div>
             <div id="dialogo-contenido"></div>
             <p id="dialogo-aviso" role="alert" class="text-warning mt-3" hidden></p>
@@ -106,13 +106,13 @@
             ['Racha de actividad', `${stats.racha} ${stats.racha === 1 ? 'semana' : 'semanas'} con al menos una sesión`, 'fire'],
             ['Resumen de actividad', `${stats.mes} sesiones este mes · ${stats.semana}/${datos.perfil?.meta || 3} esta semana`, 'graph-up-arrow']
         ];
-        $('#resumen .container').innerHTML = `${titulo('Resumen', 'Tu entrenamiento, de un vistazo.')}<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">${resumen.map(([nombre, valor, icono]) => `<div class="col"><div class="card h-100 text-center card-resaltada p-3"><i class="bi bi-${icono} display-6 text-primary" aria-hidden="true"></i><h3 class="h6 text-body-secondary mt-3">${nombre}</h3><p class="fw-semibold mb-0">${esc(valor)}</p></div></div>`).join('')}</div>`;
+        $('#resumen .container').innerHTML = `${titulo('Resumen', 'Tu entrenamiento, de un vistazo.')}<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">${resumen.map(([nombre, valor, icono]) => `<div class="col"><div class="card h-100 text-center card-resaltada border border-primary border-opacity-50 p-3"><i class="bi bi-${icono} display-6 text-primary" aria-hidden="true"></i><h3 class="h6 text-body-secondary mt-3">${nombre}</h3><p class="fw-semibold mb-0">${esc(valor)}</p></div></div>`).join('')}</div>`;
         $('#saludo').textContent = datos.perfil ? `Hola, ${datos.perfil.nombre}. Tu meta es de ${datos.perfil.meta} sesiones por semana.` : 'Tu plan, a tu ritmo. Configurá tu nombre y tu meta desde Perfil local.';
     }
 
     function renderProgreso() {
         const stats = D.estadisticas(datos);
-        $('#metricas').innerHTML = [['Sesiones realizadas', stats.total], ['Volumen acumulado', `${formato(stats.volumen)} kg`], ['Sesiones esta semana', `${stats.semana} / ${datos.perfil?.meta || 3}`]].map(([n, v]) => `<div class="col-12 col-md-4"><div class="card card-resaltada text-center p-4"><h3 class="h5">${n}</h3><p class="fs-4 text-primary fw-semibold mb-0">${v}</p></div></div>`).join('');
+        $('#metricas').innerHTML = [['Sesiones realizadas', stats.total], ['Volumen acumulado', `${formato(stats.volumen)} kg`], ['Sesiones esta semana', `${stats.semana} / ${datos.perfil?.meta || 3}`]].map(([n, v]) => `<div class="col-12 col-md-4"><div class="card card-resaltada border border-primary border-opacity-50 text-center p-4"><h3 class="h5">${n}</h3><p class="fs-4 text-primary fw-semibold mb-0">${v}</p></div></div>`).join('');
         const semanas = Array.from({ length: 4 }, (_, i) => {
             const f = D.dia(D.lunes(D.fecha()));
             f.setDate(f.getDate() - (3 - i) * 7);
@@ -122,7 +122,7 @@
         const maximo = Math.max(...semanas.map(s => s.volumen), 1);
         $('#grafico').innerHTML = semanas.map(s => `<div class="mb-3"><div class="d-flex justify-content-between small mb-1"><span>Desde ${fechaLarga(s.fecha)}</span><strong>${formato(s.volumen)} kg</strong></div><div class="progress" role="progressbar" aria-label="Volumen semanal desde ${fechaLarga(s.fecha)}" aria-valuenow="${s.volumen}" aria-valuemin="0" aria-valuemax="${maximo}"><div class="progress-bar" style="width:${s.volumen / maximo * 100}%"></div></div></div>`).join('');
         $('#records').innerHTML = stats.records.length ? `<ul class="list-group list-group-flush">${stats.records.map(r => `<li class="list-group-item bg-transparent d-flex justify-content-between gap-2"><span>${esc(r.nombre)}</span><strong>${formato(r.peso)} kg</strong></li>`).join('')}</ul>` : vacio('Registrá series con carga para ver tus récords.');
-        $('#historial').innerHTML = datos.sesiones.length ? [...datos.sesiones].sort((a, b) => b.fecha.localeCompare(a.fecha)).map(s => `<div class="item-app d-flex flex-wrap align-items-center justify-content-between gap-3 border-bottom"><div><strong>${esc(s.nombre)}</strong><p class="small text-body-secondary mb-0">${fechaLarga(s.fecha)} · ${s.ejercicios.reduce((n, e) => n + e.series.filter(v => v.hecha).length, 0)} series · ${formato(D.volumen(s))} kg de volumen</p></div><div class="d-flex flex-wrap gap-2">${boton('Detalle', 'detalle-sesion', s.id)}${boton('Eliminar', 'eliminar-sesion', s.id, 'btn-outline-danger')}</div></div>`).join('') : vacio('Todavía no registraste entrenamientos. Iniciá una sesión desde Mis rutinas.');
+        $('#historial').innerHTML = datos.sesiones.length ? [...datos.sesiones].sort((a, b) => b.fecha.localeCompare(a.fecha)).map(s => `<div class="item-app py-3 d-flex flex-wrap align-items-center justify-content-between gap-3 border-bottom"><div><strong>${esc(s.nombre)}</strong><p class="small text-body-secondary mb-0">${fechaLarga(s.fecha)} · ${s.ejercicios.reduce((n, e) => n + e.series.filter(v => v.hecha).length, 0)} series · ${formato(D.volumen(s))} kg de volumen</p></div><div class="d-flex flex-wrap gap-2">${boton('Detalle', 'detalle-sesion', s.id)}${boton('Eliminar', 'eliminar-sesion', s.id, 'btn-outline-danger')}</div></div>`).join('') : vacio('Todavía no registraste entrenamientos. Iniciá una sesión desde Mis rutinas.');
     }
 
     function perfil() {
