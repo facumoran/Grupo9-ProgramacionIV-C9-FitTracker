@@ -58,12 +58,12 @@ window.FitCatalogo = (() => {
             ['patada-triceps', 'Patada de tríceps', 'Mancuernas', 'Extensión de codo con torso inclinado.', 'Sostené el brazo estable y evitá lanzar la carga.', 'mascota-patada-triceps.png']
         ],
         Abdomen: [
-            ['plancha', 'Plancha', 'Peso corporal', 'Sostén del cuerpo sobre antebrazos y pies.', 'Mantené el cuerpo alineado. En la rutina, usá segundos en lugar de repeticiones.', null, 'segundos'],
-            ['crunch', 'Crunch abdominal', 'Peso corporal', 'Flexión corta del tronco desde el suelo.', 'No tires del cuello con las manos.'],
-            ['elevacion-rodillas', 'Elevación de rodillas', 'Barra de dominadas', 'Elevación de rodillas en suspensión.', 'Evitá balancear el cuerpo para iniciar el movimiento.'],
-            ['dead-bug', 'Dead bug', 'Peso corporal', 'Extensión alternada de brazo y pierna contrarios.', 'Controlá el movimiento manteniendo el tronco estable.'],
-            ['crunch-polea', 'Crunch en polea', 'Polea', 'Flexión del tronco con resistencia de cable.', 'Evitá convertir el recorrido en un tirón de brazos.'],
-            ['plancha-lateral', 'Plancha lateral', 'Peso corporal', 'Sostén lateral sobre antebrazo y pies.', 'Mantené la cadera alineada. Registrá el tiempo en segundos.', null, 'segundos']
+            ['plancha', 'Plancha', 'Peso corporal', 'Sostén del cuerpo sobre antebrazos y pies.', 'Mantené el cuerpo alineado. En la rutina, usá segundos en lugar de repeticiones.', 'mascota-plancha.png', 'segundos'],
+            ['crunch', 'Crunch abdominal', 'Peso corporal', 'Flexión corta del tronco desde el suelo.', 'No tires del cuello con las manos.', 'mascota-crunch.png'],
+            ['elevacion-rodillas', 'Elevación de rodillas', 'Barra de dominadas', 'Elevación de rodillas en suspensión.', 'Evitá balancear el cuerpo para iniciar el movimiento.', 'mascota-elevacion-rodillas.png'],
+            ['dead-bug', 'Dead bug', 'Peso corporal', 'Extensión alternada de brazo y pierna contrarios.', 'Controlá el movimiento manteniendo el tronco estable.', 'mascota-dead-bug.png'],
+            ['crunch-polea', 'Crunch en polea', 'Polea', 'Flexión del tronco con resistencia de cable.', 'Evitá convertir el recorrido en un tirón de brazos.', 'mascota-crunch-polea.png'],
+            ['plancha-lateral', 'Plancha lateral', 'Peso corporal', 'Sostén lateral sobre antebrazo y pies.', 'Mantené la cadera alineada. Registrá el tiempo en segundos.', 'mascota-plancha-lateral.png', 'segundos']
         ]
     };
     const ejercicios = Object.entries(grupos).flatMap(([grupo, filas]) => filas.map(([id, nombre, equipo, descripcion, tecnica, imagen, unidad]) => ({
